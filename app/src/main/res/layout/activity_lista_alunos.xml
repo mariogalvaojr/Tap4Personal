@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="com.example.mriogalvojnior.tap4personal.ListaAlunosActivity">
+
+    <android.support.v7.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/side_nav_bar"
+        android:id="@+id/toolbar_listaAlunos">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/arrowleft"
+            android:id="@+id/iv_back_listaAlunos"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:text="Lista de Alunos"
+            android:textSize="20sp"
+            android:layout_marginLeft="30sp"
+            android:textColor="@android:color/white"
+            android:id="@+id/title_toolbar_listaAlunos"
+            android:layout_height="wrap_content" />
+
+        <ImageView
+            android:layout_width="30sp"
+            android:layout_height="30sp"
+            android:layout_marginLeft="130sp"
+            android:src="@drawable/personal"/>
+    </android.support.v7.widget.Toolbar>
+
+
+    <ImageView
+        android:layout_width="150sp"
+        android:visibility="gone"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:src="@drawable/fundonome"/>
+
+    <ListView
+        android:layout_marginTop="10sp"
+        android:id="@+id/lista_alunos"
+        android:layout_below="@+id/toolbar_listaAlunos"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"></ListView>
+
+    <com.github.clans.fab.FloatingActionButton
+        android:id="@+id/fab_add_pessoa"
+        android:src="@drawable/add"
+        app:fab_size="normal"
+        android:layout_marginRight="20sp"
+        android:layout_marginBottom="20sp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        app:fab_colorNormal="@android:color/white"
+        app:fab_colorPressed="@android:color/white"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+</RelativeLayout>

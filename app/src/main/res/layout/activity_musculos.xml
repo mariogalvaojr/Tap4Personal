@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.mriogalvojnior.tap4personal.treinos.MusculosActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:id="@+id/ll_peitoral"
+        android:layout_width="match_parent"
+        android:layout_height="50sp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/txt_peitoral"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Peitoral"
+            android:layout_weight="1"
+            android:layout_gravity="center"
+            android:textSize="30sp"/>
+
+        <ImageView
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/seta"/>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5sp"
+        android:layout_below="@id/ll_peitoral"
+        android:id="@+id/vv_peitoral"
+        android:background="@android:color/darker_gray"/>
+
+    <LinearLayout
+    android:layout_below="@id/vv_peitoral"
+    android:id="@+id/ll_dorsal"
+    android:layout_width="match_parent"
+    android:layout_height="50sp"
+    android:orientation="horizontal">
+
+    <TextView
+        android:id="@+id/txt_dorsal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Dorsal"
+        android:layout_weight="1"
+        android:layout_gravity="center"
+        android:textSize="30sp"/>
+
+    <ImageView
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/seta"/>
+</LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5sp"
+        android:layout_below="@id/ll_dorsal"
+        android:id="@+id/vv_dorsal"
+        android:background="@android:color/darker_gray"/>
+
+    <LinearLayout
+        android:layout_below="@id/vv_dorsal"
+        android:id="@+id/ll_quads"
+        android:layout_width="match_parent"
+        android:layout_height="50sp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/txt_quads"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Pernas"
+            android:layout_weight="1"
+            android:layout_gravity="center"
+            android:textSize="30sp"/>
+
+        <ImageView
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/seta"/>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5sp"
+        android:layout_below="@id/ll_quads"
+        android:id="@+id/vv_quads"
+        android:background="@android:color/darker_gray"/>
+
+    <LinearLayout
+        android:layout_below="@id/vv_quads"
+        android:id="@+id/ll_femoral"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="50sp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/txt_femoral"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Femoral"
+            android:layout_weight="1"
+            android:layout_gravity="center"
+            android:textSize="30sp"/>
+
+        <ImageView
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/seta"/>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5sp"
+        android:layout_below="@id/ll_femoral"
+        android:id="@+id/vv_femoral"
+        android:background="@android:color/darker_gray"/>
+
+
+    <LinearLayout
+        android:layout_below="@id/vv_femoral"
+        android:id="@+id/ll_gluts"
+        android:layout_width="match_parent"
+        android:layout_height="50sp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/txt_gluts"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Glúteos"
+            android:layout_weight="1"
+            android:layout_gravity="center"
+            android:textSize="30sp"/>
+
+        <ImageView
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/seta"/>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5sp"
+        android:layout_below="@id/ll_gluts"
+        android:id="@+id/vv_gluts"
+        android:background="@android:color/darker_gray"/>
+
+    <LinearLayout
+        android:layout_below="@id/vv_gluts"
+        android:id="@+id/ll_abdomen"
+        android:layout_width="match_parent"
+        android:layout_height="50sp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/txt_abdomen"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Abdômen"
+            android:layout_weight="1"
+            android:layout_gravity="center"
+            android:textSize="30sp"/>
+
+        <ImageView
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/seta"/>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5sp"
+        android:layout_below="@id/ll_abdomen"
+        android:id="@+id/vv_abdomen"
+        android:background="@android:color/darker_gray"/>
+
+    <LinearLayout
+    android:layout_below="@id/vv_abdomen"
+    android:id="@+id/ll_pants"
+    android:layout_width="match_parent"
+    android:layout_height="50sp"
+    android:orientation="horizontal">
+
+    <TextView
+        android:id="@+id/txt_pants"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Panturrilhas"
+        android:layout_weight="1"
+        android:layout_gravity="center"
+        android:textSize="30sp"/>
+
+    <ImageView
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/seta"/>
+</LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5sp"
+        android:layout_below="@id/ll_pants"
+        android:id="@+id/vv_pants"
+        android:background="@android:color/darker_gray"/>
+
+    <LinearLayout
+        android:layout_below="@id/vv_pants"
+        android:id="@+id/ll_biceps"
+        android:layout_width="match_parent"
+        android:layout_height="50sp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/txt_biceps"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Bíceps"
+            android:layout_weight="1"
+            android:layout_gravity="center"
+            android:textSize="30sp"/>
+
+        <ImageView
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/seta"/>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5sp"
+        android:layout_below="@id/ll_biceps"
+        android:id="@+id/vv_biceps"
+        android:background="@android:color/darker_gray"/>
+
+    <LinearLayout
+        android:layout_below="@id/vv_biceps"
+        android:id="@+id/ll_triceps"
+        android:layout_width="match_parent"
+        android:layout_height="50sp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/txt_triceps"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Triceps"
+            android:layout_weight="1"
+            android:layout_gravity="center"
+            android:textSize="30sp"/>
+
+        <ImageView
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/seta"/>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5sp"
+        android:layout_below="@id/ll_triceps"
+        android:id="@+id/vv_triceps"
+        android:background="@android:color/darker_gray"/>
+
+
+    <LinearLayout
+        android:layout_below="@id/vv_triceps"
+        android:id="@+id/ll_delts"
+        android:layout_width="match_parent"
+        android:layout_height="50sp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/txt_delts"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Deltóides"
+            android:layout_weight="1"
+            android:layout_gravity="center"
+            android:textSize="30sp"/>
+
+        <ImageView
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/seta"/>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5sp"
+        android:layout_below="@id/ll_delts"
+        android:id="@+id/vv_delts"
+        android:background="@android:color/darker_gray"/>
+
+    </RelativeLayout>
+</ScrollView>

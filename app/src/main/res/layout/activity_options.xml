@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/side_nav_bar"
+    android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:background="@drawable/side_nav_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/iv_back"
+            android:visibility="gone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/arrowleft"
+            />
+
+        <TextView
+            android:id="@+id/textToolbar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tap4Personal"
+            android:textSize="20sp"
+            android:gravity="center"
+            android:textColor="@android:color/white"/>
+
+        <ImageView
+            android:layout_width="30sp"
+            android:layout_height="30sp"
+            android:layout_marginLeft="185sp"
+            android:src="@drawable/personal"/>
+
+    </android.support.v7.widget.Toolbar>
+
+    <ImageView
+        android:id="@+id/iv_logo"
+        android:layout_width="@dimen/tamlogo"
+        android:layout_height="@dimen/tamlogo"
+        android:layout_marginTop="120sp"
+        android:layout_centerInParent="true"
+        android:src="@drawable/personal" />
+
+
+
+    <com.github.clans.fab.FloatingActionMenu
+        android:id="@+id/fab_menu"
+        android:layout_width="wrap_content"
+        android:visibility="gone"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        app:menu_colorNormal="@android:color/holo_orange_dark"
+        app:menu_labels_position="right"
+        app:menu_colorPressed="@android:color/holo_orange_light"
+        app:menu_openDirection="down">
+
+        <!--<com.github.clans.fab.FloatingActionButton-->
+            <!--android:id="@+id/fab_pessoas"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--app:fab_label="Alunos"-->
+            <!--android:layout_centerHorizontal="true"-->
+            <!--android:src="@drawable/person"-->
+            <!--app:fab_colorNormal="@android:color/white"-->
+            <!--app:fab_size="mini" />-->
+
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/fab_treinos"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/fab_pessoas"
+            android:src="@drawable/halteres"
+            app:fab_label="Treinos"
+            app:fab_colorNormal="@android:color/white"
+            app:fab_size="mini" />
+
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/fab_dietas"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@id/fab_pessoas"
+            android:src="@drawable/dieta"
+            app:fab_label="Dieta"
+            app:fab_colorNormal="@android:color/white"
+            app:fab_size="mini" />
+
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/fab_suplementos"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:fab_label="Suplementos"
+            android:layout_toLeftOf="@id/fab_pessoas"
+            android:src="@drawable/suplementos"
+            app:fab_colorNormal="@android:color/white"
+            app:fab_size="mini" />
+
+    </com.github.clans.fab.FloatingActionMenu>
+
+    <com.github.clans.fab.FloatingActionButton
+        android:id="@+id/fab_pessoas"
+        android:layout_below="@+id/toolbar"
+        android:layout_marginTop="10sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:fab_label="Alunos"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/person"
+        app:fab_showShadow="@bool/default_circle_indicator_centered"
+        app:fab_colorNormal="@android:color/white"
+        app:fab_size="normal" />
+
+</RelativeLayout>

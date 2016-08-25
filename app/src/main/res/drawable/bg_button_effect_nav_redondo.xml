@@ -1,0 +1,6 @@
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@drawable/bg_button_unpressed_nav_redondo" android:state_pressed="false"/>
+    <item android:drawable="@drawable/bg_button_pressed_nav_redondo" android:state_pressed="true"/>
+    <item android:drawable="@drawable/bg_button_pressed_nav_redondo" android:state_focused="true"/>
+    <item android:drawable="@drawable/bg_button_unpressed_nav_redondo" android:state_focused="false"/>
+</selector>

@@ -1,0 +1,485 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="com.example.mriogalvojnior.tap4personal.CadastroHistoricoActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar_cadhitoricoAlunos"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/side_nav_bar">
+
+            <ImageView
+                android:id="@+id/iv_back_cadhistAlunos"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/arrowleft" />
+
+            <TextView
+                android:id="@+id/title_toolbar_cadhistAlunos"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30sp"
+                android:text="Cadastro de Histórico"
+                android:textColor="@android:color/white"
+                android:textSize="20sp" />
+
+            <ImageView
+                android:layout_width="30sp"
+                android:layout_height="30sp"
+                android:layout_marginLeft="80sp"
+                android:src="@drawable/personal" />
+        </android.support.v7.widget.Toolbar>
+
+
+        <LinearLayout
+            android:id="@+id/lldata"
+            android:layout_marginTop="15sp"
+            android:layout_below="@id/toolbar_cadhitoricoAlunos"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/edit_data_historico"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:clickable="false"
+                android:gravity="center"
+                android:hint="Data"
+                android:textSize="20sp" />
+
+            <ImageView
+                android:id="@+id/iv_data_hist"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:src="@drawable/data" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llpesoaltura"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/lldata"
+            android:layout_marginTop="5sp"
+            android:orientation="horizontal">
+
+
+            <EditText
+                android:id="@+id/edit_peso_hist"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:hint="Peso"
+                android:inputType="numberDecimal"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/edit_altura_hist"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:hint="Altura"
+                android:inputType="numberDecimal"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/edit_bf_hist"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:hint="%BF"
+                android:inputType="numberDecimal"
+                android:textSize="20sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_perimetros"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/llpesoaltura"
+            android:layout_marginTop="15sp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_marginLeft="10sp"
+                android:id="@+id/text_cirunferencias"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/llpesoaltura"
+                android:text="Perímetros: "
+                android:textSize="25sp"
+                android:textStyle="bold" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5sp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="5sp"
+                android:background="@android:color/darker_gray" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:id="@+id/llperimetrosadd"
+            android:layout_below="@+id/ll_perimetros"
+            android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/llbracos"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/ll_perimetros"
+            android:layout_marginTop="5sp"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/edit_braco_dir_cad"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:hint="Braço Direito"
+                android:inputType="numberDecimal"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/edit_braco_esq_cad"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:hint="Braço Esuqerdo"
+                android:inputType="numberDecimal"
+                android:textSize="20sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llantebracos"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/llbracos"
+            android:layout_marginTop="5sp"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/edit_antebraco_dir_cad"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:hint="Antebraço Direito"
+                android:inputType="numberDecimal"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/edit_antebraco_esq_cad"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:hint="Antenraço Esuqerdo"
+                android:inputType="numberDecimal"
+                android:textSize="20sp" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/llpernas"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/llantebracos"
+            android:layout_marginTop="5sp"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/edit_perna_dir_cad"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:hint="Coxa Direita"
+                android:inputType="numberDecimal"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/edit_perna_esq_cad"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:hint="Coxa Esquerda"
+                android:inputType="numberDecimal"
+                android:textSize="20sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llpants"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/llpernas"
+            android:layout_marginTop="5sp"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/edit_pants_dir_cad"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:hint="Panturrilha Direita"
+                android:inputType="numberDecimal"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/edit_pants_esq_cad"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:hint="Panturrilha Esquerda"
+                android:inputType="numberDecimal"
+                android:textSize="20sp" />
+
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/edit_torax_cad"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/llpants"
+            android:layout_marginLeft="40sp"
+            android:layout_marginRight="40sp"
+            android:layout_marginTop="5sp"
+            android:gravity="center"
+            android:hint="Toráx"
+            android:inputType="numberDecimal"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/edit_ombros_cad"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/edit_torax_cad"
+            android:layout_marginTop="5sp"
+            android:hint="Ombros"
+            android:inputType="numberDecimal"
+            android:textSize="20sp"
+            android:visibility="gone" />
+
+        <EditText
+            android:id="@+id/edit_andomen_cad"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/edit_ombros_cad"
+            android:layout_marginLeft="40sp"
+            android:layout_marginRight="40sp"
+            android:layout_marginTop="5sp"
+            android:gravity="center"
+            android:hint="Abdomen"
+            android:inputType="numberDecimal"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/edit_cintura_cad"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/edit_andomen_cad"
+            android:layout_marginLeft="40sp"
+            android:layout_marginRight="40sp"
+            android:layout_marginTop="5sp"
+            android:gravity="center"
+            android:hint="Cintura"
+            android:inputType="numberDecimal"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/edit_quadril_cad"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/edit_cintura_cad"
+            android:layout_marginLeft="40sp"
+            android:layout_marginRight="40sp"
+            android:layout_marginTop="5sp"
+            android:gravity="center"
+            android:hint="Quadril"
+            android:inputType="numberDecimal"
+            android:textSize="20sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_dobrascutaneas"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/llperimetrosadd"
+            android:layout_marginTop="15sp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/text_dobrascutaneas"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10sp"
+                android:layout_below="@id/edit_quadril_cad"
+                android:text="Dobras Cutâneas: "
+                android:textSize="25sp"
+                android:textStyle="bold" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5sp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="5sp"
+                android:background="@android:color/darker_gray" />
+        </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="10sp"
+                android:visibility="gone"
+                android:layout_below="@+id/ll_dobrascutaneas"
+                android:id="@+id/lldobrasadd">
+
+
+        <EditText
+            android:id="@+id/edit_dc_subescapular"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/ll_dobrascutaneas"
+            android:layout_marginLeft="40sp"
+            android:layout_marginRight="40sp"
+            android:layout_marginTop="5sp"
+            android:gravity="center"
+            android:inputType="numberDecimal"
+            android:hint="Subescapular"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/edit_dc_tricipital"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal"
+            android:layout_below="@id/edit_dc_subescapular"
+            android:layout_marginLeft="40sp"
+            android:layout_marginRight="40sp"
+            android:layout_marginTop="5sp"
+            android:gravity="center"
+            android:hint="Tricipital"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/edit_dc_Peitoral"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/edit_dc_tricipital"
+            android:layout_marginLeft="40sp"
+            android:inputType="numberDecimal"
+            android:layout_marginRight="40sp"
+            android:layout_marginTop="5sp"
+            android:gravity="center"
+            android:hint="Peitoral"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/edit_dc_axilarmedia"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/edit_dc_Peitoral"
+            android:layout_marginLeft="40sp"
+            android:layout_marginRight="40sp"
+            android:layout_marginTop="5sp"
+            android:inputType="numberDecimal"
+            android:gravity="center"
+            android:hint="Axilar-média"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/edit_dc_Supra_iliaca"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal"
+            android:layout_below="@id/edit_dc_axilarmedia"
+            android:layout_marginLeft="40sp"
+            android:layout_marginRight="40sp"
+            android:layout_marginTop="5sp"
+            android:gravity="center"
+            android:hint="Supra-ilíaca"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/edit_dc_abdominal"
+            android:layout_width="match_parent"
+            android:inputType="numberDecimal"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/edit_dc_Supra_iliaca"
+            android:layout_marginLeft="40sp"
+            android:layout_marginRight="40sp"
+            android:layout_marginTop="5sp"
+            android:gravity="center"
+            android:hint="Abdominal"
+            android:textSize="20sp" />
+
+
+        <EditText
+            android:id="@+id/edit_dc_coxa"
+            android:layout_width="match_parent"
+            android:inputType="numberDecimal"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/edit_dc_abdominal"
+            android:layout_marginLeft="40sp"
+            android:layout_marginRight="40sp"
+            android:layout_marginTop="5sp"
+            android:gravity="center"
+            android:hint="Coxa"
+            android:textSize="20sp" />
+
+        </LinearLayout>
+
+
+        <com.github.clans.fab.FloatingActionButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:fab_colorNormal="@android:color/white"
+            app:fab_colorPressed="@android:color/white"
+            android:src="@drawable/doneblack"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10sp"
+            android:id="@+id/fabcadHistorico"
+            app:fab_showShadow="@bool/default_circle_indicator_centered"
+            android:layout_below="@+id/lldobrasadd"/>
+    </RelativeLayout>
+
+</ScrollView>

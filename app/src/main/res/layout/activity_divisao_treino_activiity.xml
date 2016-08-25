@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".DivisaoTreinoActivity">
+
+    <android.support.v7.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/side_nav_bar"
+        android:id="@+id/toolbar_divisaotreino">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/arrowleft"
+            android:id="@+id/iv_back_divisaotreino"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:text="Divisão de Treino"
+            android:textSize="20sp"
+            android:layout_marginLeft="30sp"
+            android:textColor="@android:color/white"
+            android:id="@+id/title_toolbar_divisaotreino"
+            android:layout_height="wrap_content" />
+
+        <ImageView
+            android:layout_width="30sp"
+            android:layout_height="30sp"
+            android:layout_marginLeft="115sp"
+            android:src="@drawable/personal"/>
+    </android.support.v7.widget.Toolbar>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="10sp"
+        android:layout_below="@id/toolbar_divisaotreino"
+        android:id="@+id/llTextOptions">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_weight="1"
+            android:layout_gravity="center"
+            android:background="@android:color/darker_gray"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="SHOW Options"
+            android:layout_marginLeft="10sp"
+            android:textColor="@android:color/holo_red_dark"
+            android:textStyle="bold"
+            android:layout_marginRight="10sp"
+            android:textSize="15sp"
+            android:id="@+id/textOptions"/>
+
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:layout_below="@+id/llTextOptions"
+        android:id="@+id/rloptions">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Dias da semana:"
+        android:layout_marginTop="10sp"
+        android:layout_marginLeft="10sp"
+        android:textSize="20sp"
+        android:id="@+id/text_diassemana" />
+
+    <Spinner
+        android:layout_width="wrap_content"
+        android:layout_marginLeft="10sp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5sp"
+        android:id="@+id/spinner_diassemana"
+        android:layout_below="@+id/text_diassemana">
+
+    </Spinner>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Grupo(s) Muscular(es): "
+        android:layout_below="@+id/spinner_diassemana"
+        android:textSize="20sp"
+        android:layout_marginLeft="10sp"
+        android:id="@+id/text_gruposmusculares"
+        android:layout_marginTop="5sp"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_marginLeft="10sp"
+        android:layout_height="wrap_content"
+        android:id="@+id/edit_cad_gruposmusculares"
+        android:hint="Grupos Musculares"
+        android:textSize="20sp"
+        android:layout_marginTop="5sp"
+        android:layout_below="@+id/text_gruposmusculares"/>
+
+        </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:id="@+id/llviewbutton"
+        android:visibility="gone"
+        android:layout_below="@+id/rloptions"
+        android:layout_marginTop="10sp">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5sp"
+        android:layout_gravity="center"
+        android:layout_weight="1"
+        android:background="@android:color/darker_gray"
+        android:layout_below="@+id/edit_cad_gruposmusculares" />
+
+        <com.github.clans.fab.FloatingActionButton
+            android:layout_width="wrap_content"
+            android:id="@+id/fab_add_gm"
+            android:layout_height="wrap_content"
+            app:fab_colorNormal="@android:color/white"
+            app:fab_colorPressed="@android:color/white"
+            android:src="@drawable/doneblack"
+            app:fab_showShadow="@bool/default_circle_indicator_centered"
+           />
+
+    </LinearLayout>
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/listview_divisaotreino"
+        android:layout_below="@+id/llviewbutton"
+        android:layout_marginTop="10sp"></ListView>
+
+</RelativeLayout>

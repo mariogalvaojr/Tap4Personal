@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="com.example.mriogalvojnior.tap4personal.CadastroAlunosActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar_attinfoAlunos"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/side_nav_bar">
+
+            <ImageView
+                android:id="@+id/iv_back_attAlunos"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/arrowleft" />
+
+            <TextView
+                android:id="@+id/title_toolbar_attinfoAlunos"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30sp"
+                android:text="Informações do Aluno"
+                android:textColor="@android:color/white"
+                android:textSize="20sp" />
+
+            <ImageView
+                android:layout_width="30sp"
+                android:layout_height="30sp"
+                android:layout_marginLeft="70sp"
+                android:src="@drawable/personal" />
+        </android.support.v7.widget.Toolbar>
+
+
+        <EditText
+        android:id="@+id/edit_nome"
+        android:hint="Nome"
+            android:layout_marginLeft="30sp"
+            android:layout_marginRight="30sp"
+            android:layout_below="@id/toolbar_attinfoAlunos"
+        android:inputType="textCapSentences"
+            android:layout_marginTop="20sp"
+        android:textSize="@dimen/textSize"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <EditText
+        android:id="@+id/edit_idade"
+        android:hint="Idade"
+        android:layout_marginLeft="30sp"
+        android:layout_marginRight="30sp"
+        android:inputType="number"
+        android:layout_below="@+id/edit_nome"
+        android:textSize="@dimen/textSize"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <LinearLayout
+        android:id="@+id/ll_sexo"
+        android:layout_marginLeft="30sp"
+        android:layout_marginRight="30sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@+id/edit_idade">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sexo: "
+            android:textSize="@dimen/textSize"/>
+
+    <Spinner
+        android:id="@+id/spinner_sexo"
+        android:layout_below="@+id/edit_idade"
+        android:textSize="@dimen/textSize"
+        android:layout_marginLeft="5sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_obj"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginLeft="30sp"
+        android:layout_marginRight="30sp"
+        android:layout_below="@+id/ll_sexo">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Objetivo: "
+            android:textSize="@dimen/textSize"/>
+
+        <Spinner
+            android:id="@+id/spinner_obj"
+            android:hint="Sexo"
+            android:layout_below="@+id/edit_idade"
+            android:textSize="@dimen/textSize"
+            android:layout_marginLeft="5sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/edit_email"
+        android:hint="Email"
+        android:layout_marginLeft="30sp"
+        android:layout_marginRight="30sp"
+        android:layout_below="@+id/ll_obj"
+        android:textSize="@dimen/textSize"
+        android:inputType="textEmailAddress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <EditText
+        android:id="@+id/edit_phone"
+        android:layout_marginLeft="30sp"
+        android:layout_marginRight="30sp"
+        android:hint="Telefone"
+        android:inputType="number"
+        android:layout_below="@+id/edit_email"
+        android:textSize="@dimen/textSize"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <EditText
+        android:id="@+id/edit_preco"
+        android:hint="Preço"
+        android:layout_marginLeft="30sp"
+        android:layout_marginRight="30sp"
+        android:layout_below="@+id/edit_phone"
+        android:textSize="@dimen/textSize"
+        android:inputType="numberDecimal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <LinearLayout
+        android:layout_marginLeft="30sp"
+        android:layout_marginRight="30sp"
+        android:layout_below="@id/edit_preco"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/ll_date"
+        android:layout_marginTop="5sp"
+        android:orientation="horizontal">
+
+    <EditText
+        android:id="@+id/edit_data"
+        android:hint="Seleciona a data de início"
+        android:layout_below="@+id/edit_preco"
+        android:textSize="@dimen/textSize"
+        android:layout_weight="1"
+        android:clickable="false"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+        <ImageView
+            android:id="@+id/iv_data"
+            android:src="@drawable/data"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginLeft="30sp"
+        android:layout_marginRight="30sp"
+        android:id="@+id/ll_days_week"
+        android:layout_below="@id/ll_date"
+        android:layout_width="match_parent"
+        android:layout_marginTop="5sp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/text_days_week"
+            android:text="Dias: "
+            android:layout_marginLeft="5sp"
+            android:textSize="@dimen/textSize"/>
+
+        <Spinner
+            android:id="@+id/spinner_days_week"
+            android:layout_below="@+id/edit_idade"
+            android:textSize="@dimen/textSize"
+            android:layout_marginLeft="5sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_hour"
+        android:layout_below="@id/ll_days_week"
+        android:layout_width="match_parent"
+        android:layout_marginTop="5sp"
+        android:layout_marginLeft="30sp"
+        android:layout_marginRight="30sp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/text_hour"
+            android:text="Hora: "
+            android:layout_marginLeft="5sp"
+            android:textSize="@dimen/textSize"/>
+
+        <Spinner
+            android:id="@+id/spinner_hour"
+            android:layout_below="@+id/edit_idade"
+            android:textSize="@dimen/textSize"
+            android:layout_marginLeft="5sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+        <Button
+            android:id="@+id/button_ok"
+            android:layout_width="@dimen/buttonSize"
+            android:layout_height="wrap_content"
+            android:background="@android:color/black"
+            android:textColor="@android:color/white"
+            android:textStyle="bold"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20sp"
+            android:text="OK"
+            android:visibility="gone"
+            android:textSize="@dimen/textSize"/>
+
+        <com.github.clans.fab.FloatingActionButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:fab_colorNormal="@android:color/white"
+            app:fab_colorPressed="@android:color/white"
+            android:layout_below="@+id/ll_hour"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="15sp"
+            android:src="@drawable/doneblack"
+            android:id="@+id/fab_attinfo_aluno"
+            app:fab_showShadow="@bool/default_circle_indicator_centered"
+            app:fab_size="mini"/>
+
+    </RelativeLayout>
+
+
+</ScrollView>

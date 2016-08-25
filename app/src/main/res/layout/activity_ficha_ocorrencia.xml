@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="com.example.mriogalvojnior.tap4personal.FichaOcorrenciaActivity">
+
+    <android.support.v7.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/side_nav_bar"
+        android:id="@+id/toolbar_patologias">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/arrowleft"
+            android:id="@+id/iv_back_patologias"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:text="Patologias"
+            android:textSize="20sp"
+            android:layout_marginLeft="30sp"
+            android:textColor="@android:color/white"
+            android:id="@+id/title_toolbar_patologias"
+            android:layout_height="wrap_content" />
+
+        <ImageView
+            android:layout_width="30sp"
+            android:layout_height="30sp"
+            android:layout_marginLeft="180sp"
+            android:src="@drawable/personal"/>
+    </android.support.v7.widget.Toolbar>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="10sp"
+        android:layout_below="@+id/toolbar_patologias"
+        android:id="@+id/llOptonspatologias">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5sp"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:background="@android:color/darker_gray"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="SHOW Options"
+            android:layout_marginLeft="10sp"
+            android:layout_marginRight="10sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/holo_red_dark"
+            android:id="@+id/textOptionsPatologias"/>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="10sp"
+        android:visibility="gone"
+        android:layout_below="@+id/llOptonspatologias"
+        android:id="@+id/lladdpatologia">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Adicione Patologia"
+            android:layout_weight="1"
+            android:layout_gravity="center"
+            android:inputType="textCapSentences"
+            android:id="@+id/edit_add_patologia"/>
+
+        <com.github.clans.fab.FloatingActionButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/doneblack"
+            app:fab_showShadow="@bool/default_circle_indicator_centered"
+            android:id="@+id/fab_add_patologia"
+            app:fab_colorPressed="@android:color/white"
+            app:fab_colorNormal="@android:color/white"/>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:id="@+id/view"
+        android:layout_below="@id/lladdpatologia"
+        android:background="@android:color/darker_gray"
+        android:layout_marginTop="10sp"/>
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/listView_patologias"
+        android:layout_below="@+id/view"
+        android:layout_marginTop="10sp"></ListView>
+
+</RelativeLayout>

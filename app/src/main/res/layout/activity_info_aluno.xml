@@ -1,0 +1,575 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="com.example.mriogalvojnior.tap4personal.InfoAlunoActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar_infoAlunos"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/side_nav_bar">
+
+            <ImageView
+                android:id="@+id/iv_back_listaAlunos"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/arrowleft" />
+
+            <TextView
+                android:id="@+id/title_toolbar_infoAlunos"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30sp"
+                android:text="Informações do Aluno"
+                android:textColor="@android:color/white"
+                android:textSize="20sp" />
+
+            <ImageView
+                android:layout_width="30sp"
+                android:layout_height="30sp"
+                android:layout_marginLeft="75sp"
+                android:src="@drawable/personal" />
+        </android.support.v7.widget.Toolbar>
+
+
+        <LinearLayout
+            android:id="@+id/llintroducao"
+            android:layout_width="match_parent"
+            android:layout_marginLeft="10sp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/toolbar_infoAlunos"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/text_nomeAluno"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:text="Nome"
+                android:textColor="@android:color/black"
+                android:textSize="23sp"
+                android:textStyle="bold" />
+
+            <com.github.clans.fab.FloatingActionButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:fab_showShadow="@bool/default_circle_indicator_centered"
+                android:id="@+id/phone_infoaluno"
+                app:fab_size="mini"
+                app:fab_colorNormal="@android:color/white"
+                app:fab_colorPressed="@android:color/white"
+                android:src="@drawable/phoneblack"/>
+
+            <com.github.clans.fab.FloatingActionButton
+                android:layout_width="wrap_content"
+                app:fab_size="mini"
+                android:layout_height="wrap_content"
+                app:fab_showShadow="@bool/default_circle_indicator_centered"
+                android:id="@+id/email_infoaluno"
+                app:fab_colorNormal="@android:color/white"
+                app:fab_colorPressed="@android:color/white"
+                android:src="@drawable/emailblack"/>
+
+            <com.github.clans.fab.FloatingActionButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:fab_showShadow="@bool/default_circle_indicator_centered"
+                android:id="@+id/fab_attaluno"
+                app:fab_size="mini"
+                app:fab_colorNormal="@android:color/white"
+                app:fab_colorPressed="@android:color/white"
+                android:src="@drawable/refresh"/>
+
+            <com.github.clans.fab.FloatingActionButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:fab_size="mini"
+                app:fab_showShadow="@bool/default_circle_indicator_centered"
+                android:id="@+id/fab_delaluno"
+                app:fab_colorNormal="@android:color/white"
+                app:fab_colorPressed="@android:color/white"
+                android:src="@drawable/deletepreto"/>
+
+            <!--<ImageView-->
+                <!--android:id="@+id/phone_infoaluno"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_gravity="center"-->
+                <!--android:src="@drawable/phoneblack" />-->
+
+            <!--<ImageView-->
+                <!--android:id="@+id/email_infoaluno"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginLeft="15sp"-->
+                <!--android:src="@drawable/emailblack" />-->
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llidade"
+            android:layout_width="match_parent"
+            android:layout_marginLeft="10sp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/llintroducao"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15sp"
+                android:src="@drawable/idade"
+                android:text="Idade: "
+                android:textColor="@android:color/black"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/text_idadeAluno"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/text_nomeAluno"
+                android:layout_marginLeft="10sp"
+                android:layout_marginTop="15sp"
+                android:text="Idade"
+                android:textColor="@android:color/black"
+                android:textSize="20sp" />
+
+        </LinearLayout>
+
+        <View
+            android:id="@+id/view_idade"
+            android:layout_width="match_parent"
+            android:layout_height="0.5sp"
+            android:layout_below="@+id/llidade"
+            android:background="@android:color/darker_gray"
+            android:visibility="gone"></View>
+
+        <LinearLayout
+            android:id="@+id/llsexo"
+            android:layout_marginLeft="10sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/view_idade"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/view_idade"
+                android:layout_marginTop="15sp"
+                android:src="@drawable/sex"
+                android:text="Sexo: "
+                android:textColor="@android:color/black"
+                android:textSize="20sp" />
+
+
+            <TextView
+                android:id="@+id/text_sexoAluno"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/view_idade"
+                android:layout_marginLeft="10sp"
+                android:layout_marginTop="15sp"
+                android:text="Sexo"
+                android:textColor="@android:color/black"
+                android:textSize="20sp" />
+
+        </LinearLayout>
+
+        <View
+            android:id="@+id/view_sexo"
+            android:layout_width="match_parent"
+            android:layout_height="0.5sp"
+            android:layout_below="@+id/llsexo"
+            android:background="@android:color/darker_gray"
+            android:visibility="gone"></View>
+
+        <LinearLayout
+            android:id="@+id/llobjetivo"
+            android:layout_marginLeft="10sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/view_sexo"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15sp"
+                android:src="@drawable/obj"
+                android:text="Objetivo: "
+                android:textColor="@android:color/black"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/text_objetivoAluno"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/view_sexo"
+                android:layout_marginLeft="10sp"
+                android:layout_marginTop="15sp"
+                android:text="Objetivo"
+                android:textColor="@android:color/black"
+                android:textSize="20sp" />
+        </LinearLayout>
+
+        <View
+            android:id="@+id/view_objetivo"
+            android:layout_width="match_parent"
+            android:layout_height="0.5sp"
+            android:layout_below="@+id/llobjetivo"
+            android:background="@android:color/darker_gray"
+            android:visibility="gone"></View>
+
+        <LinearLayout
+            android:id="@+id/llemail"
+            android:layout_marginLeft="10sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/view_objetivo"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15sp"
+                android:src="@drawable/emailblack"
+                android:text="Email: "
+                android:textColor="@android:color/black"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/text_emailAluno"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/view_objetivo"
+                android:layout_marginLeft="10sp"
+                android:layout_marginTop="15sp"
+                android:text="Email"
+                android:textColor="@android:color/black"
+                android:textSize="20sp" />
+
+        </LinearLayout>
+
+        <View
+            android:id="@+id/view_email"
+            android:layout_width="match_parent"
+            android:layout_height="0.5sp"
+            android:layout_below="@+id/llemail"
+            android:background="@android:color/darker_gray"
+            android:visibility="gone"></View>
+
+        <LinearLayout
+            android:id="@+id/llphone"
+            android:layout_marginLeft="10sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/view_email"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/textPhone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/view_email"
+                android:layout_marginTop="15sp"
+                android:layout_toLeftOf="@+id/text_phoneAluno"
+                android:src="@drawable/phoneblack"
+                android:text="Phone: "
+                android:textColor="@android:color/black"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/text_phoneAluno"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/view_email"
+                android:layout_marginLeft="10sp"
+                android:layout_marginTop="15sp"
+                android:layout_toLeftOf="@+id/textPhone"
+                android:text="Phone"
+                android:textColor="@android:color/black"
+                android:textSize="20sp" />
+
+        </LinearLayout>
+
+        <View
+            android:id="@+id/view_phone"
+            android:layout_width="match_parent"
+            android:layout_height="0.5sp"
+            android:layout_below="@+id/llphone"
+            android:background="@android:color/darker_gray"
+            android:visibility="gone"></View>
+
+        <LinearLayout
+            android:id="@+id/llpreco"
+            android:layout_marginLeft="10sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/view_phone"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15sp"
+                android:src="@drawable/preco"
+                android:text="Preço: "
+                android:textColor="@android:color/black"
+                android:textSize="20sp" />
+
+
+            <TextView
+                android:id="@+id/text_precoAluno"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/view_phone"
+                android:layout_marginLeft="10sp"
+                android:layout_marginTop="15sp"
+                android:text="Preço"
+                android:textColor="@android:color/black"
+                android:textSize="20sp" />
+        </LinearLayout>
+
+        <View
+            android:id="@+id/view_preco"
+            android:layout_width="match_parent"
+            android:layout_height="0.5sp"
+            android:layout_below="@+id/llpreco"
+            android:background="@android:color/darker_gray"
+            android:visibility="gone"></View>
+
+        <LinearLayout
+            android:id="@+id/lldata"
+            android:layout_marginLeft="10sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/view_preco"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15sp"
+                android:src="@drawable/data"
+                android:text="Data de Inicio: "
+                android:textColor="@android:color/black"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/text_dataAluno"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/view_preco"
+                android:layout_marginLeft="10sp"
+                android:layout_marginTop="15sp"
+                android:text="Data"
+                android:textColor="@android:color/black"
+                android:textSize="20sp" />
+
+        </LinearLayout>
+
+
+        <View
+            android:id="@+id/view_data"
+            android:layout_width="match_parent"
+            android:layout_height="0.5sp"
+            android:layout_below="@+id/lldata"
+            android:background="@android:color/darker_gray"
+            android:visibility="gone"></View>
+
+        <LinearLayout
+            android:id="@+id/lldias"
+            android:layout_marginLeft="10sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/view_data"
+            android:orientation="horizontal">
+
+            <ImageView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15sp"
+                android:src="@drawable/dias"
+                android:text="Dias na semana: "
+                android:textColor="@android:color/black"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/text_dias_semana"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/view_preco"
+                android:layout_marginLeft="10sp"
+                android:layout_marginTop="15sp"
+                android:text="Dias na semana"
+                android:textColor="@android:color/black"
+                android:textSize="20sp" />
+
+        </LinearLayout>
+
+        <View
+            android:id="@+id/view_dias"
+            android:layout_width="match_parent"
+            android:layout_height="0.5sp"
+            android:layout_below="@+id/lldias"
+            android:background="@android:color/darker_gray"
+            android:visibility="gone"></View>
+
+        <LinearLayout
+            android:id="@+id/llhoras"
+            android:layout_marginLeft="10sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/view_dias"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15sp"
+                android:src="@drawable/hora"
+                android:text="Hora do Personal: "
+                android:textColor="@android:color/black"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/text_hora"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/view_preco"
+                android:layout_marginLeft="10sp"
+                android:layout_marginTop="15sp"
+                android:text="Hora do treinamento"
+                android:textColor="@android:color/black"
+                android:textSize="20sp" />
+
+        </LinearLayout>
+
+        <View
+            android:id="@+id/view_hora"
+            android:layout_width="match_parent"
+            android:layout_height="0.5sp"
+            android:layout_below="@+id/llhoras"
+            android:background="@android:color/darker_gray"
+            android:visibility="gone"></View>
+
+
+        <com.github.clans.fab.FloatingActionButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:fab_showShadow="@bool/default_circle_indicator_centered"
+            android:id="@+id/ib_historico"
+            app:fab_label="Histórico"
+            app:fab_size="normal"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="50sp"
+            android:layout_marginTop="35sp"
+            android:layout_below="@+id/view_hora"
+            app:fab_colorNormal="@android:color/white"
+            app:fab_colorPressed="@android:color/white"
+            android:src="@drawable/lista"/>
+
+
+        <!--<ImageView-->
+            <!--android:id="@+id/ib_historico"-->
+            <!--android:layout_width="40sp"-->
+            <!--android:layout_height="40sp"-->
+            <!--android:layout_alignParentLeft="true"-->
+            <!--android:layout_below="@+id/view_hora"-->
+            <!--android:layout_marginLeft="50sp"-->
+            <!--android:layout_marginTop="35sp"-->
+            <!--android:src="@drawable/lista" />-->
+
+        <!--<TextView-->
+            <!--android:id="@+id/textHistorico"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_alignParentLeft="true"-->
+            <!--android:layout_below="@+id/ib_historico"-->
+            <!--android:layout_marginLeft="42sp"-->
+            <!--android:text="Histórico"-->
+            <!--android:textSize="15sp" />-->
+
+        <com.github.clans.fab.FloatingActionButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:fab_showShadow="@bool/default_circle_indicator_centered"
+            android:id="@+id/iv_fichaocorrencia_aluno"
+            app:fab_label="Ficha de Ocorrência"
+            app:fab_size="normal"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/view_hora"
+            android:layout_marginRight="50sp"
+            android:layout_marginTop="35sp"
+            app:fab_colorNormal="@android:color/white"
+            app:fab_colorPressed="@android:color/white"
+            android:src="@drawable/aviso"/>
+
+        <!--<ImageView-->
+            <!--android:id="@+id/iv_fichaocorrencia_aluno"-->
+            <!--android:layout_width="40sp"-->
+            <!--android:layout_height="40sp"-->
+            <!--android:layout_alignParentRight="true"-->
+            <!--android:layout_below="@+id/view_hora"-->
+            <!--android:layout_marginRight="50sp"-->
+            <!--android:layout_marginTop="35sp"-->
+            <!--android:src="@drawable/aviso" />-->
+
+        <!--<TextView-->
+            <!--android:id="@+id/textfichadeocorrencia"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_alignParentRight="true"-->
+            <!--android:layout_below="@+id/iv_fichaocorrencia_aluno"-->
+            <!--android:layout_marginRight="10sp"-->
+            <!--android:text="Ficha de Ocorrência"-->
+            <!--android:textSize="15sp" />-->
+
+        <com.github.clans.fab.FloatingActionButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:fab_showShadow="@bool/default_circle_indicator_centered"
+            android:id="@+id/iv_divisaotreino_aluno"
+            app:fab_label="Ficha de Ocorrência"
+            app:fab_size="normal"
+            android:layout_marginTop="35sp"
+            android:layout_below="@+id/view_hora"
+            android:layout_centerHorizontal="true"
+            app:fab_colorNormal="@android:color/white"
+            app:fab_colorPressed="@android:color/white"
+            android:src="@drawable/halteres"/>
+
+        <!--<ImageView-->
+            <!--android:id="@+id/iv_divisaotreino_aluno"-->
+            <!--android:layout_width="40sp"-->
+            <!--android:layout_height="40sp"-->
+            <!--android:layout_below="@+id/iv_fichaocorrencia_aluno"-->
+            <!--android:layout_centerHorizontal="true"-->
+            <!--android:layout_marginTop="35sp"-->
+            <!--android:src="@drawable/halteres" />-->
+
+        <!--<TextView-->
+            <!--android:id="@+id/text_divisaotreino_aluno"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_below="@+id/iv_divisaotreino_aluno"-->
+            <!--android:layout_centerHorizontal="true"-->
+            <!--android:text="Divisão de Treino"-->
+            <!--android:textSize="15sp" />-->
+
+
+    </RelativeLayout>
+
+
+</ScrollView>

@@ -1,0 +1,441 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="com.example.mriogalvojnior.tap4personal.treinos.InfoHistoricoActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar_infohitoricoAlunos"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/side_nav_bar">
+
+            <ImageView
+                android:id="@+id/iv_back_infohistAlunos"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/arrowleft" />
+
+            <TextView
+                android:id="@+id/title_toolbar_infohistAlunos"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30sp"
+                android:text="Informações do Histórico"
+                android:textColor="@android:color/white"
+                android:textSize="20sp" />
+
+            <ImageView
+                android:layout_width="30sp"
+                android:layout_height="30sp"
+                android:layout_marginLeft="50sp"
+                android:src="@drawable/personal" />
+        </android.support.v7.widget.Toolbar>
+
+        <com.github.clans.fab.FloatingActionButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:fab_colorPressed="@android:color/white"
+            app:fab_colorNormal="@android:color/white"
+            android:src="@drawable/deletepreto"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginBottom="20sp"
+            android:layout_marginLeft="20sp"
+            app:fab_showShadow="@bool/default_circle_indicator_centered"
+            android:id="@+id/fabdeletehistorico"/>
+
+    <TextView
+        android:layout_below="@+id/toolbar_infohitoricoAlunos"
+        android:layout_marginTop="10sp"
+        android:id="@+id/text_data_infohist"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Data"
+        android:textSize="20sp" />
+
+    <LinearLayout
+        android:id="@+id/llpesoalturabfinfo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/text_data_infohist"
+        android:layout_marginTop="5sp"
+        android:orientation="horizontal">
+
+
+        <TextView
+            android:id="@+id/text_peso_info_hist"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Peso"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/text_altura_info_hist"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Altura"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/text_bf_info_hist"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="%BF"
+            android:textSize="20sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="20sp"
+        android:layout_below="@id/llpesoalturabfinfo"
+        android:id="@+id/llperimetros">
+
+    <TextView
+        android:id="@+id/text_circ_info_hist"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:layout_marginLeft="10sp"
+        android:layout_below="@id/llpesoalturabfinfo"
+        android:text="Perímetros:"
+        android:textSize="25sp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5sp"
+            android:layout_marginLeft="5sp"
+            android:background="@android:color/darker_gray"
+            android:layout_gravity="center"/>
+
+    </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_below="@+id/llperimetros"
+            android:id="@+id/rlshowperimetros"
+            android:visibility="gone"
+            android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:id="@+id/llbracos_info_hist"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10sp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/text_bracodireito_infohistorico"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Braço Direito"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/text_bracoesquerdo_infohistorico"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Braço Esqierdo"
+            android:textSize="20sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llantebracos_info_hist"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/llbracos_info_hist"
+        android:layout_marginTop="10sp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/text_antebracodireito_infohistorico"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Antebraço Direito"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/text_antebracoesquerdo_infohistorico"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Antebraço Esqierdo"
+            android:textSize="20sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llcoxas_hist"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/llantebracos_info_hist"
+        android:layout_marginTop="10sp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/text_coxadireita_infohistorico"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Coxa Direita"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/text_coxaesquerda_infohistorico"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Coxa Esquerda"
+            android:textSize="20sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llpantu_hist"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/llcoxas_hist"
+        android:layout_marginTop="10sp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/text_pantudireita_infohistorico"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Panturrilha Direita"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/text_pantuesquerda_infohistorico"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Panturrilha Esquerda"
+            android:textSize="20sp" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/text_torax_histo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/llpantu_hist"
+        android:layout_marginTop="10sp"
+        android:gravity="center"
+        android:text="Torax"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/text_abdomen_histo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/text_torax_histo"
+        android:layout_marginTop="10sp"
+        android:gravity="center"
+        android:text="Abdomen"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/text_cintura_histo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/text_abdomen_histo"
+        android:layout_marginTop="10sp"
+        android:gravity="center"
+        android:text="Cintura"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/text_quadril_histo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/text_cintura_histo"
+        android:layout_marginTop="10sp"
+        android:gravity="center"
+        android:text="Quadril"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/text_ombros_histo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/text_quadril_histo"
+        android:layout_marginTop="5sp"
+        android:gravity="center"
+        android:visibility="gone"
+        android:text="Ombtos"
+        android:textSize="20sp" />
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:id="@+id/lldobracutaneasinfo"
+            android:layout_below="@+id/rlshowperimetros"
+            android:layout_marginTop="20sp">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:text="Dobras Cutâneas: "
+                android:textStyle="bold"
+                android:textSize="25sp"
+                android:layout_marginLeft="10sp"
+                android:layout_marginRight="10sp"
+                android:id="@+id/text_dobrascutaneas_hist"
+                android:layout_height="wrap_content" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5sp"
+                android:layout_marginLeft="5sp"
+                android:background="@android:color/darker_gray"
+                android:layout_gravity="center"/>
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/rlshowdobras"
+            android:visibility="gone"
+            android:layout_below="@+id/lldobracutaneasinfo">
+
+        <TextView
+            android:id="@+id/text_subescapular_histo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10sp"
+            android:gravity="center"
+            android:text="Subescapular"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/text_tricipital_histo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/text_subescapular_histo"
+            android:layout_marginTop="10sp"
+            android:gravity="center"
+            android:text="Tricipital"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/text_peitoral_histo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/text_tricipital_histo"
+            android:layout_marginTop="10sp"
+            android:gravity="center"
+            android:text="Peitoral"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/text_axilarmedio_histo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/text_peitoral_histo"
+            android:layout_marginTop="10sp"
+            android:gravity="center"
+            android:text="Axilar-Médio"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/text_suprailiaca_histo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/text_axilarmedio_histo"
+            android:layout_marginTop="10sp"
+            android:gravity="center"
+            android:text="Supra-Ilíaca"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/text_abdominal_histo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/text_suprailiaca_histo"
+            android:layout_marginTop="10sp"
+            android:gravity="center"
+            android:text="Abdominal"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/text_coxa_histo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/text_abdominal_histo"
+            android:layout_marginTop="10sp"
+            android:gravity="center"
+            android:text="Coxa"
+            android:textSize="20sp" />
+
+        </RelativeLayout>
+
+
+
+        <com.github.clans.fab.FloatingActionMenu
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+            android:layout_marginRight="20sp"
+        app:menu_icon="@drawable/shareblack"
+            android:layout_below="@+id/rlshowdobras"
+        app:menu_colorNormal="@android:color/white"
+        android:layout_alignParentBottom="true">
+
+
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/fab_wpp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:fab_size="mini"
+            app:fab_showShadow="@bool/default_circle_indicator_centered"
+            android:src="@drawable/phoneblack"
+            app:fab_colorNormal="@android:color/white"
+            app:fab_colorPressed="@android:color/white"/>
+
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/fab_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:fab_size="mini"
+            app:fab_showShadow="@bool/default_circle_indicator_centered"
+            android:src="@drawable/emailblack"
+            app:fab_colorNormal="@android:color/white"
+            app:fab_colorPressed="@android:color/white"/>
+
+    </com.github.clans.fab.FloatingActionMenu>
+
+    </RelativeLayout>
+
+
+</ScrollView>

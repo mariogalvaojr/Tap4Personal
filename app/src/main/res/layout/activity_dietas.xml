@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.mriogalvojnior.tap4personal.dietas.DietasActivity">
+
+
+    <TextView
+        android:id="@+id/text_proteina"
+        android:text="Proteínas:"
+        android:textSize="20sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <LinearLayout
+        android:id="@+id/ll_proteinas"
+        android:layout_marginTop="5sp"
+        android:layout_below="@+id/text_proteina"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+
+    <Spinner
+        android:id="@+id/sp_proteinas"
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"></Spinner>
+
+        <Spinner
+            android:id="@+id/sp_qtd_proteinas"
+            android:layout_width="match_parent"
+            android:layout_weight="2"
+            android:layout_height="wrap_content"></Spinner>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/text_caboidratos"
+        android:text="Carboidratos"
+        android:textSize="20sp"
+        android:layout_marginTop="5sp"
+        android:layout_below="@id/ll_proteinas"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <LinearLayout
+        android:id="@+id/ll_caboidratos"
+        android:layout_below="@id/text_caboidratos"
+        android:layout_width="match_parent"
+        android:layout_marginTop="5sp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Spinner
+            android:id="@+id/sp_carbos"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"></Spinner>
+
+        <Spinner
+            android:id="@+id/sp_qtd_carbos"
+            android:layout_width="match_parent"
+            android:layout_weight="2"
+            android:layout_height="wrap_content"></Spinner>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_below="@+id/ll_caboidratos"
+        android:id="@+id/ll_button_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/fab_add_refeicao"
+            android:layout_width="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:src="@drawable/doneblack"
+            app:fab_colorNormal="@android:color/white"
+            app:fab_colorPressed="@android:color/white"
+            android:layout_height="wrap_content" />
+
+    <View
+        android:id="@+id/vv"
+        android:layout_below="@+id/ll_caboidratos"
+        android:layout_width="wrap_content"
+        android:layout_gravity="center"
+        android:layout_weight="640"
+        android:layout_marginRight="5sp"
+        android:layout_marginLeft="5sp"
+        android:background="@android:color/darker_gray"
+        android:layout_height="0.5sp"></View>
+
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/fab_limpar"
+            android:layout_width="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:src="@drawable/cancelblack"
+            app:fab_colorNormal="@android:color/white"
+            app:fab_colorPressed="@android:color/white"
+            android:layout_height="wrap_content" />
+
+
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/list_dietas"
+        android:layout_marginTop="5sp"
+        android:layout_below="@+id/ll_button_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"></ListView>
+
+    <com.github.clans.fab.FloatingActionMenu
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:menu_icon="@drawable/shareblack"
+        app:menu_colorNormal="@android:color/white"
+        android:layout_alignParentBottom="true"
+        android:layoutDirection="inherit">
+
+
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/fab_wppd"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:fab_size="mini"
+            android:src="@drawable/phoneblack"
+            app:fab_colorNormal="@android:color/white"
+            app:fab_colorPressed="@android:color/white"/>
+
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/fab_emaild"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:fab_size="mini"
+            android:src="@drawable/emailblack"
+            app:fab_colorNormal="@android:color/white"
+            app:fab_colorPressed="@android:color/white"/>
+
+    </com.github.clans.fab.FloatingActionMenu>
+
+</RelativeLayout>
