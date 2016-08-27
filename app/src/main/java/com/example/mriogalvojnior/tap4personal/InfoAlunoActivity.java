@@ -12,6 +12,8 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -34,6 +36,9 @@ public class InfoAlunoActivity extends AppCompatActivity implements View.OnClick
     private ImageView arrowBack;
     private ImageView historicoImage, fichaOcorrenciaImage, divisaotreinoImage;
     private ImageView phoneInfo, emailInfo;
+    private LinearLayout llInformacoes;
+    private RelativeLayout rlInformacoes;
+    private TextView txtInformacoes;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -74,6 +79,11 @@ public class InfoAlunoActivity extends AppCompatActivity implements View.OnClick
         fabDivisaoTreino = (FloatingActionButton) findViewById(R.id.iv_divisaotreino_aluno);
         fabDeleteAluno = (FloatingActionButton) findViewById(R.id.fab_delaluno);
         fabRefresh = (FloatingActionButton) findViewById(R.id.fab_attaluno);
+        llInformacoes = (LinearLayout) findViewById(R.id.llinformacoes);
+        rlInformacoes = (RelativeLayout) findViewById(R.id.rlinformacoes);
+        txtInformacoes = (TextView) findViewById(R.id.txtInformacoes);
+
+        llInformacoes.setOnClickListener(this);
 
         fabPhone.setOnClickListener(this);
         fabEmail.setOnClickListener(this);
@@ -194,6 +204,15 @@ public class InfoAlunoActivity extends AppCompatActivity implements View.OnClick
                 Intent intentAtualizar = new Intent(this, AtualizarAlunoActivity.class);
                 intentAtualizar.putExtra("alunoattid", aluno.getId());
                 startActivity(intentAtualizar);
+                break;
+            case R.id.llinformacoes:
+                if (rlInformacoes.getVisibility() == View.GONE){
+                    rlInformacoes.setVisibility(View.VISIBLE);
+                    txtInformacoes.setText("- Informações");
+                } else{
+                    rlInformacoes.setVisibility(View.GONE);
+                    txtInformacoes.setText("+ Informaçoes");
+                }
                 break;
         }
     }
