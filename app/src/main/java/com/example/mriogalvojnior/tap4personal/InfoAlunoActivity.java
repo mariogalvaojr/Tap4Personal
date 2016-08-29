@@ -34,11 +34,9 @@ public class InfoAlunoActivity extends AppCompatActivity implements View.OnClick
     private Toolbar toolbar;
     private TextView textToolbar;
     private ImageView arrowBack;
-    private ImageView historicoImage, fichaOcorrenciaImage, divisaotreinoImage;
-    private ImageView phoneInfo, emailInfo;
     private LinearLayout llInformacoes;
     private RelativeLayout rlInformacoes;
-    private TextView txtInformacoes;
+    private TextView txtInformacoes, text1fichadeocorrencia, text2fichadeocorrencia, textdivisaodetreino, texthistorico;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,6 +52,10 @@ public class InfoAlunoActivity extends AppCompatActivity implements View.OnClick
         textToolbar.setTypeface(font);
         arrowBack = (ImageView) findViewById(R.id.iv_back_listaAlunos);
         arrowBack.setOnClickListener(this);
+        text1fichadeocorrencia = (TextView) findViewById(R.id.textFichadeOcorrencia);
+        text2fichadeocorrencia = (TextView) findViewById(R.id.text2FichadeOcorrencia);
+        textdivisaodetreino = (TextView) findViewById(R.id.textDivisaodeTreino);
+        texthistorico = (TextView) findViewById(R.id.textHistorico);
 
         setSupportActionBar(toolbar);
 
@@ -121,11 +123,12 @@ public class InfoAlunoActivity extends AppCompatActivity implements View.OnClick
         phone.setTypeface(font2);
         preco.setTypeface(font2);
         data.setTypeface(font2);
-//        historicoText.setTypeface(font2);
         diasText.setTypeface(font2);
         horasText.setTypeface(font2);
-//        fichaocorrencia.setTypeface(font2);
-//        divisaotreino.setTypeface(font2);
+        text1fichadeocorrencia.setTypeface(font);
+        text2fichadeocorrencia.setTypeface(font);
+        textdivisaodetreino.setTypeface(font);
+        texthistorico.setTypeface(font);
     }
 
 //    @Override

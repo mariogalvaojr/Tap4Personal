@@ -33,7 +33,7 @@ public class ListaAlunosActivity extends AppCompatActivity implements View.OnCli
     private ListaAlunosAdapter adapter;
     private List<Aluno> alunos;
     private Toolbar toolbar;
-    private TextView textView;
+    private TextView textView, textAvisoListaVazia;
     private ImageView arrowLeft;
     private AlunoDao dao;
     private FloatingActionButton fabAddPessoa;
@@ -47,6 +47,7 @@ public class ListaAlunosActivity extends AppCompatActivity implements View.OnCli
         textView = (TextView) findViewById(R.id.title_toolbar_listaAlunos);
         arrowLeft = (ImageView) findViewById(R.id.iv_back_listaAlunos);
         arrowLeft.setOnClickListener(this);
+        textAvisoListaVazia = (TextView) findViewById(R.id.textAvisoListaVazia);
 
         Typeface font = Typeface.createFromAsset(getAssets(), "Roboto-Medium.ttf");
         textView.setTypeface(font);
@@ -60,6 +61,12 @@ public class ListaAlunosActivity extends AppCompatActivity implements View.OnCli
         fabAddPessoa.setOnClickListener(this);
         lista = (ListView) findViewById(R.id.lista_alunos);
         alunos = dao.loadAll();
+        if (alunos.size() == 0 && alunos.isEmpty()){
+            textAvisoListaVazia.setVisibility(View.VISIBLE);
+            textAvisoListaVazia.setText("Você ainda não tem alunos cadastrados!");
+        }else{
+            textAvisoListaVazia.setVisibility(View.GONE);
+        }
         adapter = new ListaAlunosAdapter(this, alunos, dao);
         lista.setAdapter(adapter);
         lista.setTextFilterEnabled(false);
@@ -83,7 +90,6 @@ public class ListaAlunosActivity extends AppCompatActivity implements View.OnCli
     @Override
     public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
         Aluno aluno = (Aluno) adapterView.getItemAtPosition(i);
-        Toast.makeText(this, "Você clicou em: " + aluno.getNome().toString(), Toast.LENGTH_SHORT).show();
         Intent intent = new Intent(this, InfoAlunoActivity.class);
         intent.putExtra("alunoid", aluno.getId());
         startActivity(intent);

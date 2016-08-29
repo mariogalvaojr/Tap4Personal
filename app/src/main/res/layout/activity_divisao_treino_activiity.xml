@@ -131,9 +131,10 @@
         <com.github.clans.fab.FloatingActionButton
             android:layout_width="wrap_content"
             android:id="@+id/fab_add_gm"
+            app:fab_size="mini"
             android:layout_height="wrap_content"
             app:fab_colorNormal="@android:color/white"
-            app:fab_colorPressed="@android:color/white"
+            app:fab_colorPressed="@android:color/holo_red_dark"
             android:src="@drawable/doneblack"
             app:fab_showShadow="@bool/default_circle_indicator_centered"
            />

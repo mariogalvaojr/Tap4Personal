@@ -34,7 +34,7 @@ public class HistoricoAlunoActivity extends AppCompatActivity implements View.On
     private ListView listView;
     private Toolbar toolbar;
     private ImageView imageView;
-    private TextView textView;
+    private TextView textView, textAvisoHistorico;
     private EditText dataEdit, pesoEdit, bfEdit;
     private FloatingActionButton fabAddHistorico;
     private HistoricoAdapter adapter;
@@ -55,11 +55,13 @@ public class HistoricoAlunoActivity extends AppCompatActivity implements View.On
         toolbar = (Toolbar) findViewById(R.id.toolbar_hitoricoAlunos);
         textView = (TextView) findViewById(R.id.title_toolbar_histAlunos);
         imageView = (ImageView) findViewById(R.id.iv_back_histAlunos);
+        textAvisoHistorico = (TextView) findViewById(R.id.textAvisoHistorico);
 
         imageView.setOnClickListener(this);
 
         Typeface font = Typeface.createFromAsset(getAssets(), "Roboto-Medium.ttf");
         textView.setTypeface(font);
+        textAvisoHistorico.setTypeface(font);
 
         dao = daoSession.getHistoticoDao();
         alunodao = daoSession.getAlunoDao();
@@ -72,6 +74,12 @@ public class HistoricoAlunoActivity extends AppCompatActivity implements View.On
 
         listView = (ListView) findViewById(R.id.lista_historico);
         listaHistorico = dao.loadAll();
+        if (listaHistorico.size() == 0 && listaHistorico.isEmpty()){
+            textAvisoHistorico.setVisibility(View.VISIBLE);
+            textAvisoHistorico.setText("Aluno ainda não possui históricos cadastados!");
+        }else{
+            textAvisoHistorico.setVisibility(View.GONE);
+        }
         adapter = new HistoricoAdapter(this, listaHistorico, dao);
         adapter.setListaHistorico(aluno.getHistoricoAlunos());
         adapter.notifyDataSetChanged();

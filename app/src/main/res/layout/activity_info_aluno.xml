@@ -2,6 +2,7 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    xmlns:fab="http://schemas.android.com/apk/res-auto"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context="com.example.mriogalvojnior.tap4personal.InfoAlunoActivity">
@@ -64,11 +65,12 @@
 
         <com.github.clans.fab.FloatingActionMenu
             android:layout_width="wrap_content"
+            fab:menu_fab_label="Opçoes"
             app:menu_openDirection="down"
             android:layout_alignParentRight="true"
             android:layout_below="@+id/toolbar_infoAlunos"
             android:layout_height="wrap_content"
-            app:menu_colorPressed="@android:color/white"
+            app:menu_colorPressed="@android:color/holo_red_dark"
             app:menu_colorNormal="@android:color/white"
             app:menu_shadowColor="@color/default_circle_indicator_fill_color"
             app:menu_icon="@drawable/addblack">
@@ -79,8 +81,9 @@
                 app:fab_showShadow="@bool/default_circle_indicator_centered"
                 android:id="@+id/phone_infoaluno"
                 app:fab_size="mini"
+                fab:fab_label="Ligar"
                 app:fab_colorNormal="@android:color/white"
-                app:fab_colorPressed="@android:color/white"
+                app:fab_colorPressed="@android:color/holo_red_dark"
                 android:src="@drawable/phoneblack"/>
 
             <com.github.clans.fab.FloatingActionButton
@@ -89,8 +92,9 @@
                 android:layout_height="wrap_content"
                 app:fab_showShadow="@bool/default_circle_indicator_centered"
                 android:id="@+id/email_infoaluno"
+                fab:fab_label="Enviar Email"
                 app:fab_colorNormal="@android:color/white"
-                app:fab_colorPressed="@android:color/white"
+                app:fab_colorPressed="@android:color/holo_red_dark"
                 android:src="@drawable/emailblack"/>
 
             <com.github.clans.fab.FloatingActionButton
@@ -99,18 +103,20 @@
                 app:fab_showShadow="@bool/default_circle_indicator_centered"
                 android:id="@+id/fab_attaluno"
                 app:fab_size="mini"
+                fab:fab_label="Atualizar"
                 app:fab_colorNormal="@android:color/white"
-                app:fab_colorPressed="@android:color/white"
+                app:fab_colorPressed="@android:color/holo_red_dark"
                 android:src="@drawable/refresh"/>
 
             <com.github.clans.fab.FloatingActionButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 app:fab_size="mini"
+                fab:fab_label="Excluir"
                 app:fab_showShadow="@bool/default_circle_indicator_centered"
                 android:id="@+id/fab_delaluno"
                 app:fab_colorNormal="@android:color/white"
-                app:fab_colorPressed="@android:color/white"
+                app:fab_colorPressed="@android:color/holo_red_dark"
                 android:src="@drawable/deletepreto"/>
 
         </com.github.clans.fab.FloatingActionMenu>
@@ -131,7 +137,7 @@
                 android:id="@+id/txtInformacoes"
                 android:textSize="15sp"
                 android:textStyle="bold"
-                android:textColor="@android:color/darker_gray"/>
+                android:textColor="@android:color/secondary_text_light"/>
 
             <View
                 android:layout_width="match_parent"
@@ -500,6 +506,12 @@
             android:background="@android:color/darker_gray"
             android:visibility="gone"></View>
 
+        <RelativeLayout
+            android:layout_below="@+id/rlinformacoes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true">
+
 
         <com.github.clans.fab.FloatingActionButton
             android:layout_width="wrap_content"
@@ -507,13 +519,12 @@
             app:fab_showShadow="@bool/default_circle_indicator_centered"
             android:id="@+id/ib_historico"
             app:fab_label="Histórico"
-            app:fab_size="normal"
+            app:fab_size="mini"
             android:layout_alignParentLeft="true"
             android:layout_marginLeft="50sp"
             android:layout_marginTop="35sp"
-            android:layout_below="@+id/view_hora"
             app:fab_colorNormal="@android:color/white"
-            app:fab_colorPressed="@android:color/white"
+            app:fab_colorPressed="@android:color/holo_red_dark"
             android:src="@drawable/lista"/>
 
 
@@ -543,13 +554,12 @@
             app:fab_showShadow="@bool/default_circle_indicator_centered"
             android:id="@+id/iv_fichaocorrencia_aluno"
             app:fab_label="Ficha de Ocorrência"
-            app:fab_size="normal"
+            app:fab_size="mini"
             android:layout_alignParentRight="true"
-            android:layout_below="@+id/view_hora"
             android:layout_marginRight="50sp"
             android:layout_marginTop="35sp"
             app:fab_colorNormal="@android:color/white"
-            app:fab_colorPressed="@android:color/white"
+            app:fab_colorPressed="@android:color/holo_red_dark"
             android:src="@drawable/aviso"/>
 
         <!--<ImageView-->
@@ -578,13 +588,63 @@
             app:fab_showShadow="@bool/default_circle_indicator_centered"
             android:id="@+id/iv_divisaotreino_aluno"
             app:fab_label="Ficha de Ocorrência"
-            app:fab_size="normal"
+            app:fab_size="mini"
             android:layout_marginTop="35sp"
-            android:layout_below="@+id/view_hora"
             android:layout_centerHorizontal="true"
             app:fab_colorNormal="@android:color/white"
-            app:fab_colorPressed="@android:color/white"
+            app:fab_colorPressed="@android:color/holo_red_dark"
             android:src="@drawable/halteres"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textFichadeOcorrencia"
+            android:textStyle="italic"
+            android:textSize="15sp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="50sp"
+            android:textColor="@android:color/secondary_text_light"
+            android:text="Ficha de"
+            android:layout_below="@+id/iv_fichaocorrencia_aluno"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/text2FichadeOcorrencia"
+            android:textStyle="italic"
+            android:textSize="15sp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="40sp"
+            android:textColor="@android:color/secondary_text_light"
+            android:text="Ocorrência"
+            android:layout_below="@+id/textFichadeOcorrencia"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textDivisaodeTreino"
+            android:textStyle="italic"
+            android:textSize="15sp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginRight="10sp"
+            android:textColor="@android:color/secondary_text_light"
+            android:text="Divisão de Treino"
+            android:layout_below="@+id/iv_divisaotreino_aluno"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textHistorico"
+            android:textStyle="italic"
+            android:layout_marginLeft="50sp"
+            android:textSize="15sp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginRight="10sp"
+            android:textColor="@android:color/secondary_text_light"
+            android:text="Histórico"
+            android:layout_below="@+id/ib_historico"/>
+
+        </RelativeLayout>
 
         <!--<ImageView-->
             <!--android:id="@+id/iv_divisaotreino_aluno"-->

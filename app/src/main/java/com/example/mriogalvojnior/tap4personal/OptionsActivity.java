@@ -26,6 +26,7 @@ public class OptionsActivity extends AppCompatActivity implements View.OnClickLi
     private AlertDialog alerta;
     private Toolbar toolbar;
     private ImageView arrowBack;
+    private TextView alunosFabText;
     private TextView textToolbar;
 
     @Override
@@ -38,6 +39,7 @@ public class OptionsActivity extends AppCompatActivity implements View.OnClickLi
         fabDietas = (FloatingActionButton) findViewById(R.id.fab_dietas);
         fabSuplementos = (FloatingActionButton) findViewById(R.id.fab_suplementos);
         arrowBack = (ImageView) findViewById(R.id.iv_back);
+        alunosFabText = (TextView) findViewById(R.id.textFabAlunos);
 
         arrowBack.setOnClickListener(this);
 
@@ -45,6 +47,7 @@ public class OptionsActivity extends AppCompatActivity implements View.OnClickLi
         textToolbar = (TextView) findViewById(R.id.textToolbar);
         Typeface font = Typeface.createFromAsset(getAssets(), "Roboto-Medium.ttf");
         textToolbar.setTypeface(font);
+        alunosFabText.setTypeface(font);
 
         setSupportActionBar(toolbar);
 

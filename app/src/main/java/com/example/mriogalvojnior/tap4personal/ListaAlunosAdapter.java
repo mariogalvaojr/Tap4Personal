@@ -19,21 +19,18 @@ import java.util.List;
 /**
  * Created by Mário Galvão Júnior on 27/07/2016.
  */
-public class ListaAlunosAdapter extends BaseAdapter implements Filterable{
+public class ListaAlunosAdapter extends BaseAdapter{
 
     private Context context;
     private List<Aluno> listaExibicao;
     private List<Aluno> lista;
     private AlunoDao alunoDao;
     private ListaAlunosActivity activity;
-    private FriendFilter friendFilter;
 
     public ListaAlunosAdapter(Context context, List<Aluno> listaAlunos, AlunoDao alunoDao) {
         this.context = context;
         this.lista = listaAlunos;
         this.alunoDao = alunoDao;
-
-        getFilter();
     }
 
     @Override
@@ -67,41 +64,5 @@ public class ListaAlunosAdapter extends BaseAdapter implements Filterable{
         text.setText(aluno.getNome());
 
         return view;
-    }
-
-    @Override
-    public Filter getFilter() {
-        if (friendFilter == null){
-            friendFilter = new FriendFilter();
-        }
-        return friendFilter;
-    }
-
-    public class FriendFilter extends Filter{
-
-        @Override
-        protected FilterResults performFiltering(CharSequence charSequence) {
-            FilterResults results = new FilterResults();
-            if (charSequence != null && charSequence.length() > 0){
-                List<Aluno> tempList = new ArrayList<>();
-                for (Aluno aluno : lista){
-                    if (aluno.getNome().toLowerCase().contains(charSequence.toString().toLowerCase())){
-                        tempList.add(aluno);
-                    }
-                }
-                results.count = tempList.size();
-                results.values = tempList;
-            } else {
-                results.count = lista.size();
-                results.values = lista;
-            }
-            return results;
-        }
-
-        @Override
-        protected void publishResults(CharSequence charSequence, FilterResults filterResults) {
-            listaExibicao = (List<Aluno>) filterResults.values;
-            notifyDataSetChanged();
-        }
     }
 }
