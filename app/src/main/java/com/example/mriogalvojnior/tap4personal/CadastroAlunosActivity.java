@@ -136,6 +136,7 @@ public class CadastroAlunosActivity extends AppCompatActivity implements View.On
         dias.add("Seg - Qua - Sex");
         dias.add("Ter - Qui - Sab");
         dias.add("Todos os dias");
+        dias.add("4 vezes na semana");
         dias.add("Seg à Sex");
         dias.add("3 vezes na semana - Aleatóriamente");
 
@@ -220,25 +221,6 @@ public class CadastroAlunosActivity extends AppCompatActivity implements View.On
         String data = dataEdt.getText().toString();
         String dias = diasSpinner.getSelectedItem().toString();
         String horas = horasSpinner.getSelectedItem().toString();
-
-        if (nome == null || nome.equals("")) {
-            nomeEdt.setError("Campo Obrigatorio!");
-        }
-        if (idade == null || idade.equals("")) {
-            idadeEdt.setError("Campo Obtigatorio!");
-        }
-        if (email == null || email.equals("")) {
-            emailEdt.setError("Campo Obrigatorio!");
-        }
-        if (phone == null || phone.equals("")) {
-            phoneEdt.setError("Campo Obrigatorio");
-        }
-        if (preco == null || preco.equals("")) {
-            precoEdt.setError("Campo Obrigatorio");
-        }
-        if (data == null || data.equals("")) {
-            dataEdt.setError("Campo Obrigatorio");
-        }
 
         if (validacao){
 

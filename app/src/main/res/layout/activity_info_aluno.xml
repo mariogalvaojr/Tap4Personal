@@ -72,7 +72,7 @@
             android:layout_height="wrap_content"
             app:menu_colorPressed="@android:color/holo_red_dark"
             app:menu_colorNormal="@android:color/white"
-            app:menu_shadowColor="@color/default_circle_indicator_fill_color"
+            app:menu_shadowColor="@android:color/tertiary_text_light"
             app:menu_icon="@drawable/addblack">
 
             <com.github.clans.fab.FloatingActionButton
@@ -512,6 +512,21 @@
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true">
 
+            <com.github.clans.fab.FloatingActionButton
+                android:layout_width="wrap_content"
+                android:visibility="gone"
+                android:layout_height="wrap_content"
+                app:fab_showShadow="@bool/default_circle_indicator_centered"
+                android:id="@+id/fab_historico_pagamento"
+                app:fab_label="Ficha de Ocorrência"
+                app:fab_size="mini"
+                android:layout_below="@+id/iv_divisaotreino_aluno"
+                android:layout_marginTop="35sp"
+                android:layout_centerHorizontal="true"
+                app:fab_colorNormal="@android:color/white"
+                app:fab_colorPressed="@android:color/holo_red_dark"
+                android:src="@drawable/preco"/>
+
 
         <com.github.clans.fab.FloatingActionButton
             android:layout_width="wrap_content"
@@ -636,13 +651,27 @@
             android:layout_height="wrap_content"
             android:id="@+id/textHistorico"
             android:textStyle="italic"
-            android:layout_marginLeft="50sp"
+            android:layout_marginLeft="45sp"
             android:textSize="15sp"
             android:layout_alignParentLeft="true"
             android:layout_marginRight="10sp"
             android:textColor="@android:color/secondary_text_light"
             android:text="Histórico"
             android:layout_below="@+id/ib_historico"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textHistoricoPagamento"
+                android:textStyle="italic"
+                android:visibility="gone"
+                android:layout_marginLeft="50sp"
+                android:textSize="15sp"
+                android:layout_marginRight="10sp"
+                android:textColor="@android:color/secondary_text_light"
+                android:text="Histórico de Pagamentos"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/fab_historico_pagamento"/>
 
         </RelativeLayout>
 

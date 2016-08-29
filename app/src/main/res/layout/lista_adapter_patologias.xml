@@ -6,11 +6,12 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="40sp">
+        android:layout_height="80sp">
 
     <TextView
         android:id="@+id/textView_pat"
-        android:textSize="25dp"
+        android:textSize="18dp"
+        android:gravity="center"
         android:layout_marginLeft="20sp"
         android:layout_centerInParent="true"
         android:layout_width="match_parent"

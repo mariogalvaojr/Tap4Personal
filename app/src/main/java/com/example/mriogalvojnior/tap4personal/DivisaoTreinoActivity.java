@@ -55,6 +55,7 @@ public class DivisaoTreinoActivity extends AppCompatActivity implements AdapterV
     private Toolbar toolbar;
     private TextView textView;
     private ImageView imageView;
+    private FloatingActionButton fabWpp, fabEmail;
 
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
@@ -79,6 +80,8 @@ public class DivisaoTreinoActivity extends AppCompatActivity implements AdapterV
         txtOptions = (TextView) findViewById(R.id.textOptions);
         rlOptions = (RelativeLayout) findViewById(R.id.rloptions);
         llADDOptions = (LinearLayout) findViewById(R.id.llviewbutton);
+        fabWpp = (FloatingActionButton) findViewById(R.id.fab_wpp_dv);
+        fabEmail = (FloatingActionButton) findViewById(R.id.fab_email_dv);
 
         setSupportActionBar(toolbar);
 
@@ -89,6 +92,8 @@ public class DivisaoTreinoActivity extends AppCompatActivity implements AdapterV
 
         imageView.setOnClickListener(this);
         txtOptions.setOnClickListener(this);
+        fabWpp.setOnClickListener(this);
+        fabEmail.setOnClickListener(this);
 
         List<String> diassemana = new ArrayList<>();
         diassemana.add("Segunda-Feira");
@@ -178,6 +183,30 @@ public class DivisaoTreinoActivity extends AppCompatActivity implements AdapterV
                 Intent intent =  new Intent(this, InfoAlunoActivity.class);
                 intent.putExtra("alunoid", aluno.getId());
                 startActivity(intent);
+                break;
+            case R.id.fab_wpp_dv:
+                StringBuilder text1 = new StringBuilder("");
+                text1.append("Divisão de Treinameno: \n\n");
+                for (DivisaoTreino divisaoTreino : list) {
+                    text1.append("- " + divisaoTreino.getDiadasemana().toString() + "\n\n");
+                    Intent waIntent = new Intent(Intent.ACTION_SEND);
+                    waIntent.setType("text/plain");
+                    waIntent.setPackage("com.whatsapp");
+                    waIntent.putExtra(Intent.EXTRA_TEXT, text1.toString());
+                    startActivity(Intent.createChooser(waIntent, "Share with"));
+                }
+                break;
+            case R.id.fab_email_dv:
+                intent = new Intent(Intent.ACTION_SEND);
+                intent.setType("message/rfc822");
+                intent.putExtra(Intent.EXTRA_EMAIL, new String[]{aluno.getEmail()});
+                intent.putExtra(Intent.EXTRA_SUBJECT, "Divisão de Treinamento.");
+                StringBuilder text = new StringBuilder("");
+                    for (DivisaoTreino d : list) {
+                        text.append("- " + d.getDiadasemana().toString() + "\n\n");
+                        intent.putExtra(Intent.EXTRA_TEXT, "Divisão de treino: " + "\n\n" + text.toString());
+                }
+                startActivity(Intent.createChooser(intent, "Chooser Email:"));
                 break;
         }
     }

@@ -1,6 +1,7 @@
 package com.example.mriogalvojnior.tap4personal;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.graphics.Typeface;
 import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
@@ -30,13 +31,14 @@ public class InfoAlunoActivity extends AppCompatActivity implements View.OnClick
     private TextView nome, idade, sexo, objetivo, email, phone, preco, data, historicoText, diasText, horasText, fichaocorrencia, divisaotreino;
     private long idAluno;
     private FloatingActionButton fabPhone, fabEmail, fabHistorico, fabFichadeOcorrencia, fabDivisaoTreino,
-            fabDeleteAluno, fabRefresh;
+            fabDeleteAluno, fabRefresh, fabHistoricoPagamentos;
     private Toolbar toolbar;
     private TextView textToolbar;
     private ImageView arrowBack;
     private LinearLayout llInformacoes;
     private RelativeLayout rlInformacoes;
-    private TextView txtInformacoes, text1fichadeocorrencia, text2fichadeocorrencia, textdivisaodetreino, texthistorico;
+    private TextView txtInformacoes, text1fichadeocorrencia, text2fichadeocorrencia, textdivisaodetreino, texthistorico,
+    textHistoricoPagamentos;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,6 +58,8 @@ public class InfoAlunoActivity extends AppCompatActivity implements View.OnClick
         text2fichadeocorrencia = (TextView) findViewById(R.id.text2FichadeOcorrencia);
         textdivisaodetreino = (TextView) findViewById(R.id.textDivisaodeTreino);
         texthistorico = (TextView) findViewById(R.id.textHistorico);
+        fabHistoricoPagamentos = (FloatingActionButton) findViewById(R.id.fab_historico_pagamento);
+        textHistoricoPagamentos = (TextView) findViewById(R.id.textHistoricoPagamento);
 
         setSupportActionBar(toolbar);
 
@@ -98,13 +102,38 @@ public class InfoAlunoActivity extends AppCompatActivity implements View.OnClick
         aluno.getHistoricoAlunos();
 
         nome.setText(aluno.getNome());
-        idade.setText(aluno.getIdade().toString() + " anos");
+        if (aluno.getIdade().toString() != null && !aluno.getIdade().toString().equals("")) {
+            idade.setText(aluno.getIdade().toString() + " anos");
+        }else{
+            idade.setText("Não informado!");
+            idade.setTextColor(Color.LTGRAY);
+        }
         sexo.setText(aluno.getSexo().toString());
         objetivo.setText(aluno.getObjetivo().toString());
-        email.setText(aluno.getEmail().toString());
-        phone.setText("092 " + aluno.getTelefone().toString());
-        preco.setText("R$ " + aluno.getPreco().toString() + " reais");
-        data.setText(aluno.getData().toString());
+        if (aluno.getEmail().toString() != null && !aluno.getEmail().toString().equals("")) {
+            email.setText(aluno.getEmail().toString());
+        }else{
+            email.setText("Não informado");
+            email.setTextColor(Color.LTGRAY);
+        }
+        if (aluno.getTelefone().toString() != null && !aluno.getTelefone().toString().equals("")) {
+            phone.setText("092 " + aluno.getTelefone().toString());
+        }else{
+            phone.setText("Não informado");
+            phone.setTextColor(Color.LTGRAY);
+        }
+        if (aluno.getPreco().toString() != null && !aluno.getPreco().toString().equals("")) {
+            preco.setText("R$ " + aluno.getPreco().toString() + " reais");
+        }else{
+            preco.setText("Não informado");
+            preco.setTextColor(Color.LTGRAY);
+        }
+        if (aluno.getData().toString() != null && !aluno.getData().toString().equals("")) {
+            data.setText(aluno.getData().toString());
+        }else{
+            data.setText("Não informado");
+            data.setTextColor(Color.LTGRAY);
+        }
         diasText.setText(aluno.getDaysforweek().toString());
         horasText.setText(aluno.getHour().toString());
 
@@ -113,6 +142,7 @@ public class InfoAlunoActivity extends AppCompatActivity implements View.OnClick
         fabHistorico.setOnClickListener(this);
         fabFichadeOcorrencia.setOnClickListener(this);
         fabDivisaoTreino.setOnClickListener(this);
+        fabHistoricoPagamentos.setOnClickListener(this);
 
         Typeface font2 = Typeface.createFromAsset(getAssets(), "roboto.ttf");
         nome.setTypeface(font);
@@ -129,6 +159,7 @@ public class InfoAlunoActivity extends AppCompatActivity implements View.OnClick
         text2fichadeocorrencia.setTypeface(font);
         textdivisaodetreino.setTypeface(font);
         texthistorico.setTypeface(font);
+        textHistoricoPagamentos.setTypeface(font);
     }
 
 //    @Override
@@ -216,6 +247,11 @@ public class InfoAlunoActivity extends AppCompatActivity implements View.OnClick
                     rlInformacoes.setVisibility(View.GONE);
                     txtInformacoes.setText("+ Informaçoes");
                 }
+                break;
+            case R.id.fab_historico_pagamento:
+                Intent intent4 = new Intent(this, HistoricoPagamentoActivity.class);
+                intent4.putExtra("alunoid", aluno.getId());
+                startActivity(intent4);
                 break;
         }
     }

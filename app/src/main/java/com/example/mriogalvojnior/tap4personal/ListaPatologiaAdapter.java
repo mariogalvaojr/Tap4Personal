@@ -55,7 +55,7 @@ public class ListaPatologiaAdapter extends BaseAdapter {
             view = inflater.inflate(R.layout.lista_adapter_patologias, null);
         }
 
-        Typeface typeface = Typeface.createFromAsset(context.getAssets(), "Roboto-Medium.ttf");
+        Typeface typeface = Typeface.createFromAsset(context.getAssets(), "roboto.ttf");
         TextView textView = (TextView) view.findViewById(R.id.textView_pat);
         textView.setText(patologia.getNome());
         textView.setTypeface(typeface);

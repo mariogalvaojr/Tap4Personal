@@ -168,6 +168,7 @@ public class AtualizarAlunoActivity extends AppCompatActivity implements View.On
         dias.add("Seg - Qua - Sex");
         dias.add("Ter - Qui - Sab");
         dias.add("Todos os dias");
+        dias.add("4 vezes na semana");
         dias.add("3 vezes na semana - Aleatóriamente");
 
         ArrayAdapter<String> diasAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, dias);
